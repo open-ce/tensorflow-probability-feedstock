@@ -1,1 +1,1 @@
-# tensorflow-probability
+# tensorflow-probability-feedstock
