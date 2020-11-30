@@ -11,7 +11,12 @@
 #!/bin/bash
 set -ex
 
-bazel build  --copt=-O3 :pip_pkg
+SCRIPT_DIR=$RECIPE_DIR/../buildscripts
+
+# Pick up additional variables defined from the conda build environment
+$SCRIPT_DIR/set_python_path_for_bazelrc.sh $SRC_DIR
+
+bazel --bazelrc=${SRC_DIR}/python_configure.bazelrc build --copt=O3 :pip_pkg
 
 #build a whl file
 mkdir -p $SRC_DIR/tensorflow_probability_pkg
