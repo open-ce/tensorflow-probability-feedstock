@@ -44,6 +44,12 @@ requirements:
     - tensorflow-base {{ tensorflow }}
     - tensorflow-estimator {{ estimator_version }}
 
+test:
+  requires:
+    # Use pins to control cos6/cos7 match
+    - libgcc-ng  {{ libgcc }}
+    - libstdcxx-ng  {{ libstdcxx }}
+
 about:
   home: https://www.tensorflow.org/probability/
   license: Apache-2.0
