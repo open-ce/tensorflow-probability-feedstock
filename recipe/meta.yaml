@@ -9,7 +9,7 @@ package:
 
 source:
   git_url: https://github.com/tensorflow/probability.git
-  git_rev: {{ version }}-rc0
+  git_rev: {{ version }}
   patches:
     - 0002-revert-README-addition.patch
 
