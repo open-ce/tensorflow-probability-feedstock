@@ -1,7 +1,7 @@
 # tensorflow-probability meta data file
 {% set name = "tensorflow-probability" %}
-{% set version = "0.12.1" %}
-{% set estimator_version = "2.4.0" %}
+{% set version = "0.13.0" %}
+{% set estimator_version = "2.5.0" %}
 
 package:
   name: {{ name }}
