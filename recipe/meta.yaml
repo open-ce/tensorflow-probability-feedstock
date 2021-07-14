@@ -14,11 +14,8 @@ source:
     - 0002-revert-README-addition.patch
 
 build:
-  number: 2
+  number: 1
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
-  ignore_run_exports:
-    - libgcc-ng
-    - libstdcxx-ng
 
 requirements:
   build:
@@ -45,9 +42,6 @@ requirements:
     - dm-tree {{ dm_tree }}
     - tensorflow-base {{ tensorflow }}
     - tensorflow-estimator {{ estimator_version }}
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
 
 about:
   home: https://www.tensorflow.org/probability/
