@@ -1,7 +1,7 @@
 # tensorflow-probability meta data file
 {% set name = "tensorflow-probability" %}
-{% set version = "0.13.0" %}
-{% set estimator_version = "2.5.0" %}
+{% set version = "0.14.0" %}
+{% set estimator_version = "2.6.0" %}
 
 package:
   name: {{ name }}
@@ -14,24 +14,18 @@ source:
     - 0002-revert-README-addition.patch
 
 build:
-  number: 3
+  number: 1
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
     - bazel {{ bazel }}
   host:
     - python {{ python }}
     - tensorflow-base {{ tensorflow }}
     - tensorflow-estimator {{ estimator_version }}
-    # Use pins to control cos6/cos7 match
-    - libgcc-ng  {{ libgcc }}
-    - libstdcxx-ng  {{ libstdcxx }}
   run:
     - python {{ python }}
     - decorator
