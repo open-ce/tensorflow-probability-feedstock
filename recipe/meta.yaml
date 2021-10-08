@@ -1,6 +1,6 @@
 # tensorflow-probability meta data file
 {% set name = "tensorflow-probability" %}
-{% set version = "0.12.1" %}
+{% set version = "0.12.2" %}
 {% set estimator_version = "2.4.0" %}
 
 package:
@@ -14,7 +14,7 @@ source:
     - 0002-revert-README-addition.patch
 
 build:
-  number: 3
+  number: 1
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
