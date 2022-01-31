@@ -20,6 +20,7 @@ SCRIPT_DIR=$RECIPE_DIR/../buildscripts
 
 # Pick up additional variables defined from the conda build environment
 $SCRIPT_DIR/set_python_path_for_bazelrc.sh $SRC_DIR
+export BAZEL_LINKLIBS=-l%:libstdc++.a
 
 bazel --bazelrc=${SRC_DIR}/python_configure.bazelrc build --copt=O3 :pip_pkg
 
