@@ -1,6 +1,6 @@
 #!/bin/bash
 # *****************************************************************
-# (C) Copyright IBM Corp. 2018, 2021. All Rights Reserved.
+# (C) Copyright IBM Corp. 2018, 2022. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ SCRIPT_DIR=$RECIPE_DIR/../buildscripts
 
 # Pick up additional variables defined from the conda build environment
 $SCRIPT_DIR/set_python_path_for_bazelrc.sh $SRC_DIR
+export BAZEL_LINKLIBS=-l%:libstdc++.a
 
 bazel --bazelrc=${SRC_DIR}/python_configure.bazelrc build --copt=O3 :pip_pkg
 
