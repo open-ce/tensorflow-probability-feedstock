@@ -1,7 +1,7 @@
 # tensorflow-probability meta data file
 {% set name = "tensorflow-probability" %}
-{% set version = "0.16.0" %}
-{% set estimator_version = "2.8.0" %}
+{% set version = "0.17.0" %}
+{% set estimator_version = "2.9.0" %}
 
 package:
   name: {{ name }}
@@ -19,8 +19,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              #[ppc_arch != 'p10']
-    - {{ compiler('cxx') }}            #[ppc_arch != 'p10']
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - bazel {{ bazel }}
   host:
     - python {{ python }}
