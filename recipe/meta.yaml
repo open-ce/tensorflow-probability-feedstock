@@ -14,13 +14,13 @@ source:
     - 0002-revert-README-addition.patch
 
 build:
-  number: 1
+  number: 2
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
+    - {{ compiler('c') }}      #[ppc_arch != 'p10']
+    - {{ compiler('cxx') }}    #[ppc_arch != 'p10']
     - bazel {{ bazel }}
   host:
     - python {{ python }}
