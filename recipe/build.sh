@@ -1,6 +1,6 @@
 #!/bin/bash
 # *****************************************************************
-# (C) Copyright IBM Corp. 2018, 2022. All Rights Reserved.
+# (C) Copyright IBM Corp. 2018, 2023. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
 # limitations under the License.
 # *****************************************************************
 set -ex
+
+source open-ce-common-utils.sh
 
 SCRIPT_DIR=$RECIPE_DIR/../buildscripts
 
@@ -31,5 +33,6 @@ bazel-bin/pip_pkg $SRC_DIR/tensorflow_probability_pkg --release
 # install using pip
 pip install --no-deps $SRC_DIR/tensorflow_probability_pkg/*.whl
 
-bazel clean --expunge
-bazel shutdown
+PID=$(bazel info server_pid)
+echo "PID: $PID"
+cleanup_bazel $PID
