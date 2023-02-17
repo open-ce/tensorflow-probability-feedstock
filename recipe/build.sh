@@ -16,6 +16,8 @@
 # *****************************************************************
 set -ex
 
+source open-ce-common-utils.sh
+
 SCRIPT_DIR=$RECIPE_DIR/../buildscripts
 
 # Pick up additional variables defined from the conda build environment
@@ -31,5 +33,7 @@ bazel-bin/pip_pkg $SRC_DIR/tensorflow_probability_pkg --release
 # install using pip
 pip install --no-deps $SRC_DIR/tensorflow_probability_pkg/*.whl
 
-bazel clean --expunge
-bazel shutdown
+PID=$(bazel info server_pid)
+echo "PID: $PID"
+cleanup_bazel $PID
+
