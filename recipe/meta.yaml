@@ -14,7 +14,7 @@ source:
     - 0002-revert-README-addition.patch
 
 build:
-  number: 2
+  number: 3
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
