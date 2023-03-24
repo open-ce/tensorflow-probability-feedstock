@@ -29,6 +29,7 @@ requirements:
   run:
     - python {{ python }}
     - decorator
+    - absl-py {{ absl_py }}
     - six {{ six }}
     - numpy {{ numpy }}
     - gast {{ gast }}
