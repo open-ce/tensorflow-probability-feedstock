@@ -1,6 +1,6 @@
 # tensorflow-probability meta data file
 {% set name = "tensorflow-probability" %}
-{% set version = "0.23.0" %}
+{% set version = "0.22.1" %}
 
 package:
   name: {{ name }}
@@ -13,7 +13,7 @@ source:
     - 0002-revert-README-addition.patch
 
 build:
-  number: 1
+  number: 2
   string: py{{ python | replace(".", "") }}_{{ PKG_BUILDNUM }}
 
 requirements:
@@ -36,6 +36,12 @@ requirements:
     - dm-tree {{ dm_tree }}
     - tensorflow-base {{ tensorflow }}
     - tensorflow-estimator {{ tf_estimator }}
+  test:
+    imports:
+      - tensorflow
+      - tensorflow_probability
+    commands:
+      - python -c "import tensorflow; print(tensorflow.__version__)"
 
 about:
   home: https://www.tensorflow.org/probability/
