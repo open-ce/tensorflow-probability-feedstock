@@ -11,6 +11,7 @@ source:
   git_rev: v{{ version }}
   patches:
     - 0002-revert-README-addition.patch
+    - 0001-Relax-typing-extensions-pin.patch
 
 build:
   number: 1

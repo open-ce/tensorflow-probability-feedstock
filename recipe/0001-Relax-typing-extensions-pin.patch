@@ -1,0 +1,24 @@
+From b5ca314bea691caa3ee837799bd6c82f896e83f5 Mon Sep 17 00:00:00 2001
+From: ArchanaShinde1 <Archana.Shinde1@ibm.com>
+Date: Tue, 20 Aug 2024 04:50:35 +0000
+Subject: [PATCH] Relax typing-extensions pin
+
+---
+ required_packages.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/required_packages.py b/required_packages.py
+index cefd12296..fbb630529 100644
+--- a/required_packages.py
++++ b/required_packages.py
+@@ -26,7 +26,6 @@ REQUIRED_PACKAGES = [
+     'cloudpickle>=1.3',
+     'gast>=0.3.2',  # For autobatching
+     'dm-tree',  # For NumPy/JAX backends (hence, also for prefer_static)
+-    'typing-extensions<4.6.0',  # TODO(b/284106340): Remove this pin
+ ]
+ 
+ if __name__ == '__main__':
+-- 
+2.40.1
+
